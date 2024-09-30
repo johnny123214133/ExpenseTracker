@@ -11,7 +11,7 @@
 			<span v-if="transaction.amount >=0">${{ transaction.amount }}</span>
 			<span v-else>-${{ Math.abs(transaction.amount) }}</span>
 
-			<button class="delete-btn">x</button>
+			<button class="delete-btn" @click="deleteTransaction(transaction.id)">x</button>
 		</li>
 	
 	</ul>
@@ -26,4 +26,13 @@ const props = defineProps({
 		required : true
 	}
 })
+
+const emit = defineEmits([
+	'transactionDeleted'
+])
+
+const deleteTransaction = (id) => {
+	emit('transactionDeleted', id)
+}
+
 </script>
