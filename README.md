@@ -5,4 +5,5 @@ I needed a quick refresher on Vue...
 
 ## Usage:
 `npm install`
+
 `npm run dev`
